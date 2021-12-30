@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1077783350116",
+    "project_id": "rekulapplic",
+    "storage_bucket": "rekulapplic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077783350116:android:dda2d4f6f76a25d2e30871",
+        "android_client_info": {
+          "package_name": "id.group4.rekulapplic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1077783350116-en7hkq22f0v30jaadnqacibk3mih4mri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC99IKpOc6ZOEcAXg-xa1YLcaMDSBP0VXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1077783350116-en7hkq22f0v30jaadnqacibk3mih4mri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
