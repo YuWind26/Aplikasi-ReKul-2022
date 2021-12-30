@@ -1,6 +1,6 @@
 # Aplikasi-ReKul
 Aplikasi ReKul merupakan Aplikasi Mobile Reminder Kuliah yang dibuat menggunakan Bahasa Kotlin 
-- **add authentication** - 11/12/2021
+- **add authentication** - 30/12/2021
   - Multi-User Level Authentication
   - **Coding**
     - SplashScreen
