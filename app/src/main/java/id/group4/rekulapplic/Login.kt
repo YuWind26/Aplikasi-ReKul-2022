@@ -145,6 +145,7 @@ class Login : AppCompatActivity() {
                     }
                     else if(role == "Admin"){
                         startActivity(Intent(this@Login , HomeAdmin::class.java))
+//                            Toast.makeText(this@Login, "Login Admin",Toast.LENGTH_SHORT).show()
                         finish()
                     }
                 }

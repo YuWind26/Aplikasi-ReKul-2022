@@ -25,6 +25,9 @@ class HomeAdmin : AppCompatActivity() {
         binding = ActivityHomeAdminBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        fAuth = FirebaseAuth.getInstance()
+
+
         var btnAccount = findViewById(R.id.btn_account) as View
         var btnTugas = findViewById(R.id.btnTugas) as Button
 

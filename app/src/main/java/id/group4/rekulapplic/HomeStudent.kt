@@ -28,10 +28,20 @@ class HomeStudent : AppCompatActivity() {
 
         fAuth = FirebaseAuth.getInstance()
 
-        var btnAccount = findViewById(R.id.btn_account) as View
+        binding.btnHome.setOnClickListener {
+            startActivity(Intent(this, HomeStudent::class.java))
+        }
 
-        btnAccount.setOnClickListener {
-            startActivity(Intent(applicationContext,Profil::class.java))
+        binding.profileImage.setOnClickListener {
+            startActivity(Intent(this,Profil::class.java ))
+        }
+
+        binding.btnTugas.setOnClickListener {
+            startActivity(Intent(this,Tugas::class.java))
+        }
+
+        binding.btnAccount.setOnClickListener {
+            startActivity(Intent(this,Profil::class.java))
         }
 
         loadUserInfo()

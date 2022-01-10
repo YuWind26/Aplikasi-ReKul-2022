@@ -27,19 +27,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="60dp"
-        android:layout_toEndOf="@+id/btnProfilHead"
+        android:layout_toEndOf="@+id/profileImage"
         android:text="Nugas,Yuk"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toEndOf="@+id/view2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.517" />
 
-    <View
-        android:id="@+id/btnProfilHead"
+    <ImageView
+        android:id="@+id/profileImage"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:background="@drawable/account"
@@ -93,14 +93,15 @@
         app:layout_constraintTop_toBottomOf="@+id/view2"
         app:layout_constraintVertical_bias="0.025" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <ListView
+        android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="200dp"
         app:layout_constraintEnd_toEndOf="@+id/plus"
         app:layout_constraintStart_toStartOf="@+id/back"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/list_item"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
