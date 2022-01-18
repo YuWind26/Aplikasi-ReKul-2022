@@ -28,3 +28,20 @@ Aplikasi ReKul merupakan Aplikasi Mobile Reminder Kuliah yang dibuat menggunakan
     - Tugas
     - AddTugas
     - Dialog Form Edit Tugas
+- **add Kontak** - 18/01/2022
+  - **Coding**
+    - Kontak
+  - **Design**
+    - Kontak
+- **add crud jadwal** - 18/01/2022
+  - **Coding**
+    - JadwalStudent
+    - Jadwal
+    - AddJadwal
+    - Dialog Form Edit Jadwal
+    - Create, Read, Update, Delete Jadwal
+  - **Design**
+    - Jadwal
+    - JadwalStudent
+    - AddJadwal
+    - Dialog Form Edit Jadwal
