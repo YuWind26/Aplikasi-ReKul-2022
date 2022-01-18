@@ -17,3 +17,14 @@ Aplikasi ReKul merupakan Aplikasi Mobile Reminder Kuliah yang dibuat menggunakan
     - HomeAdmin, HomeStudent, HomeTeacher
     - Profil
     - EditProfil
+    - Forgot Password
+- **add crud tugas** - 11/01/2022
+  - **Coding**
+    - Tugas
+    - AddTugas
+    - Dialog Form Edit Tugas
+    - Create, Read, Update, Delete Tugas
+  - **Design**
+    - Tugas
+    - AddTugas
+    - Dialog Form Edit Tugas
