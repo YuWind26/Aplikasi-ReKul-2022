@@ -44,6 +44,14 @@ class HomeStudent : AppCompatActivity() {
             startActivity(Intent(this,Profil::class.java))
         }
 
+        binding.btnKontak.setOnClickListener {
+            startActivity(Intent(this,MyKontak::class.java))
+        }
+
+        binding.btnJadwalStudent.setOnClickListener {
+            startActivity(Intent(this, JadwalStudent::class.java))
+        }
+
         loadUserInfo()
     }
 

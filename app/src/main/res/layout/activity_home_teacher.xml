@@ -60,6 +60,7 @@
         app:layout_constraintVertical_bias="0.08">
 
         <Button
+            android:id="@+id/btnJadwalDosen"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded2"
@@ -67,6 +68,7 @@
             android:textColor="@color/black" />
 
         <Button
+            android:id="@+id/btnKontakDosen"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"

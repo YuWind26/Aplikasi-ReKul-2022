@@ -25,6 +25,10 @@ class HomeTeacher : AppCompatActivity() {
         binding = ActivityHomeTeacherBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnJadwalDosen.setOnClickListener {
+            startActivity(Intent(applicationContext, Jadwal::class.java))
+        }
+
         fAuth = FirebaseAuth.getInstance()
 
         var btnAccount = findViewById(R.id.btn_account) as View
