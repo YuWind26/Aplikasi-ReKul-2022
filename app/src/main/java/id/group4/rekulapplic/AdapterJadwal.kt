@@ -45,7 +45,7 @@ class AdapterJadwal (val mCtx: Context, val layoutResid : Int, val jadwalList : 
 
     private fun UpdateData(jadwal : JadwalUser) {
         val builder = AlertDialog.Builder(mCtx)
-        builder.setTitle("Edit Jadwal")
+//        builder.setTitle("Edit Jadwal")
 ////
         val inflater = LayoutInflater.from(mCtx)
         val view = inflater.inflate(R.layout.update_dialog_jadwal, null)

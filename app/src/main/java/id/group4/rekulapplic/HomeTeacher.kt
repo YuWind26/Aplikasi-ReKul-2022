@@ -33,6 +33,10 @@ class HomeTeacher : AppCompatActivity() {
 
         var btnAccount = findViewById(R.id.btn_account) as View
 
+        binding.btnKontakDosen.setOnClickListener {
+            startActivity(Intent(this,MyKontak::class.java))
+        }
+
         btnAccount.setOnClickListener {
             startActivity(Intent(applicationContext,Profil::class.java))
         }

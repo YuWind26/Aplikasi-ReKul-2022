@@ -18,10 +18,12 @@
         android:layout_gravity="center_horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mata Kuliah"
-            android:textColor="@color/black"
+            android:gravity="center_horizontal"
+            android:background="@color/red"
+            android:textColor="@color/white"
             android:textSize="16dp"
             android:textStyle="bold"
             />
@@ -37,10 +39,12 @@
             android:textStyle="bold"
             />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Dosen"
-            android:textColor="@color/black"
+            android:gravity="center_horizontal"
+            android:background="@color/red"
+            android:textColor="@color/white"
             android:textSize="16dp"
             android:textStyle="bold"
             />
@@ -57,10 +61,12 @@
             android:textSize="16dp"
             android:textStyle="bold" />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Topik"
-            android:textColor="@color/black"
+            android:gravity="center_horizontal"
+            android:background="@color/red"
+            android:textColor="@color/white"
             android:textSize="16dp"
             android:textStyle="bold"
             />
@@ -77,10 +83,12 @@
             />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Waktu"
-            android:textColor="@color/black"
+            android:gravity="center_horizontal"
+            android:background="@color/red"
+            android:textColor="@color/white"
             android:textSize="16dp"
             android:textStyle="bold"
             />

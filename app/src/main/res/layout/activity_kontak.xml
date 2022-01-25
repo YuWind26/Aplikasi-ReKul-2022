@@ -25,35 +25,46 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <ImageView
-            android:id="@+id/profileImage"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="20dp"
-            android:background="@drawable/account"
-            android:clickable="true"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
-            app:layout_constraintEnd_toStartOf="@+id/textView"
-            app:layout_constraintHorizontal_bias="0.102"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+<!--        <ImageView-->
+<!--            android:id="@+id/profileImage"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:background="@drawable/account"-->
+<!--            android:clickable="true"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/view"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/textView"-->
+<!--            app:layout_constraintHorizontal_bias="0.102"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="Kirim Pesan"
-            android:textColor="@color/white"
-            android:textSize="40sp"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-            app:layout_constraintHorizontal_bias="0.754"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.484" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/account"
+        app:civ_border_color="#FF000000"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Kirim Pesan"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.421" />
+
+    <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
@@ -64,7 +75,8 @@
             app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view"
-            app:layout_constraintVertical_bias="0.038">
+            app:layout_constraintVertical_bias="0.038"
+            android:gravity="center_horizontal">
 
 
             <ImageView
@@ -79,7 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="10dp"
                 android:text="Kontak"
                 android:textColor="@color/white"
                 android:textSize="50sp" />
@@ -92,7 +104,8 @@
         android:layout_height="wrap_content"
         android:drawableRight="@drawable/ic_baseline_perm_contact_calendar_24"
         android:ems="16"
-        android:hint="Isi Nomormu"
+        android:hint="Isi Nomor"
+        android:backgroundTint="@color/white"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,38 +113,41 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.025" />
 
-    <Button
-        android:id="@+id/btnKontak"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="72dp"
-        android:layout_marginBottom="20dp"
-        android:text="Hai"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view" />
-
     <EditText
         android:id="@+id/etNama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="16"
-        android:hint="Isi Namamu"
+        android:hint="Isi Nama"
+        android:backgroundTint="@color/white"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/rvPesan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNo"
         app:layout_constraintVertical_bias="0.235" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvPesan"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnKirimData"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        app:layout_constraintTop_toBottomOf="@+id/etNo"
-        tools:layout_editor_absoluteX="0dp"
-        tools:listitem="@layout/list_pesan"
-        />
+        android:text="Kirim"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNama"
+        app:layout_constraintVertical_bias="0.149" />
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/rvPesan"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="60dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/etNo"-->
+<!--        tools:layout_editor_absoluteX="0dp"-->
+<!--        tools:listitem="@layout/list_pesan"-->
+<!--        />-->
 
 
     <!--    <TextView-->

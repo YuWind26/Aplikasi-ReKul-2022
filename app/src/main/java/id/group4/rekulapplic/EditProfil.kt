@@ -154,7 +154,7 @@ class EditProfil : AppCompatActivity() {
 
         //setup popup menu
         val popupMenu = PopupMenu(this,binding.profileImage)
-        popupMenu.menu.add(Menu.NONE,0,0,"Camera")
+//        popupMenu.menu.add(Menu.NONE,0,0,"Camera")
         popupMenu.menu.add(Menu.NONE,1,1,"Gallery")
         popupMenu.show()
 
@@ -162,14 +162,16 @@ class EditProfil : AppCompatActivity() {
         popupMenu.setOnMenuItemClickListener { item ->
             //get id of clicked item
             val id = item.itemId
-            if (id == 0){
-                //camera clicked
-                pickImageCamera()
-            }
-            else if (id == 1){
-                //gallery clicked
-                pickImageGallery()
-            }
+//            if (id == 0){
+//                //camera clicked
+//                pickImageCamera()
+//            }
+//            else if (id == 1){
+//                //gallery clicked
+//                pickImageGallery()
+//            }
+
+            pickImageGallery()
 
             true
         }

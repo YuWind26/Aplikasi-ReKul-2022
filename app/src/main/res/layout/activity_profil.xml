@@ -52,6 +52,18 @@
         app:layout_constraintTop_toBottomOf="@+id/view5"
         app:layout_constraintVertical_bias="0.023" />
 
+    <!--    <ImageView-->
+<!--        android:id="@+id/profileImage"-->
+<!--        android:layout_width="98dp"-->
+<!--        android:layout_height="95dp"-->
+<!--        android:src="@drawable/account"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/username"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.498"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/view5"-->
+<!--        app:layout_constraintVertical_bias="0.184" />-->
+
     <ImageView
         android:id="@+id/btnEdit"
         android:layout_width="60sp"
@@ -59,22 +71,23 @@
         android:src="@drawable/edit"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintEnd_toEndOf="@+id/view5"
-        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toEndOf="@+id/profileImage"
         app:layout_constraintTop_toBottomOf="@+id/view5"
-        app:layout_constraintVertical_bias="0.489" />
+        app:layout_constraintVertical_bias="0.327" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profileImage"
-        android:layout_width="98dp"
-        android:layout_height="95dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:src="@drawable/account"
-        app:layout_constraintBottom_toTopOf="@+id/username"
+        app:civ_border_color="#FF000000"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view5"
-        app:layout_constraintVertical_bias="0.184" />
+        app:layout_constraintVertical_bias="0.666" />
 
     <TextView
         android:id="@+id/username"
@@ -216,7 +229,7 @@
         app:layout_constraintHorizontal_bias="0.171"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/back"
-        app:layout_constraintVertical_bias="0.072" />
+        app:layout_constraintVertical_bias="0.09" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

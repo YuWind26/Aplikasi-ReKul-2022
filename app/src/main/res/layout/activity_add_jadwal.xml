@@ -24,16 +24,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
+<!--    <ImageView-->
+<!--        android:id="@+id/profileImage"-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:background="@drawable/account"-->
+<!--        android:clickable="true"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/view"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/textView"-->
+<!--        app:layout_constraintHorizontal_bias="0.102"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profileImage"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginStart="20dp"
-        android:background="@drawable/account"
-        android:clickable="true"
+        android:src="@drawable/account"
+        app:civ_border_color="#FF000000"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toStartOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,10 +58,10 @@
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintHorizontal_bias="0.754"
+        app:layout_constraintHorizontal_bias="0.801"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.484" />
+        app:layout_constraintVertical_bias="0.421" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
