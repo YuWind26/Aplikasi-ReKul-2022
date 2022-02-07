@@ -1,14 +1,19 @@
 package id.group4.rekulapplic
 
 import android.app.ProgressDialog
+import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.widget.*
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.iid.FirebaseInstanceId
+import com.google.firebase.messaging.FirebaseMessaging
 //import com.google.firebase.firestore.FirebaseFirestore
 import id.group4.rekulapplic.databinding.ActivityRegistrasiBinding
 
@@ -94,7 +99,11 @@ class Registrasi : AppCompatActivity() {
         binding.goToLogin.setOnClickListener{
             startActivity(Intent(this,Login::class.java))
         }
+
     }
+
+
+
 
     private var username = ""
     private var email = ""
@@ -145,7 +154,15 @@ class Registrasi : AppCompatActivity() {
         fAuth.createUserWithEmailAndPassword(email,password)
             .addOnSuccessListener {
                 //account dibuat
-                updateUserInfo()
+                //                Firebase Cloud Messaging notification
+                FirebaseMessaging.getInstance().subscribeToTopic("mahasiswa")
+
+                val token = FirebaseInstanceId.getInstance().token
+                    if (token != null) {
+
+                        updateUserInfo(token)
+                    }
+                //                Firebase Cloud Messaging notification
             }
             .addOnFailureListener { e ->
                 //gagal buat account
@@ -154,7 +171,7 @@ class Registrasi : AppCompatActivity() {
             }
     }
 
-    private fun updateUserInfo() {
+    private fun updateUserInfo(token :String) {
         //save user info -> FRealtimeDB
         progressDialog.setMessage("Saving User Info")
 
@@ -179,6 +196,7 @@ class Registrasi : AppCompatActivity() {
             Toast.makeText(this, "Tolong Pilih Rolemu",Toast.LENGTH_SHORT).show()
         }
         hashMap["timestamp"] = timestamp
+        hashMap["token"] = token
 
         //set data to db
         val ref = FirebaseDatabase.getInstance().getReference("Users")

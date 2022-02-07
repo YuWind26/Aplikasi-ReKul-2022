@@ -47,6 +47,7 @@ class AddTugas : AppCompatActivity(), View.OnClickListener {
         binding = ActivityAddTugasBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         mataKuliahTugas = binding.mataKuliahTugas
         deskripsiTugas = binding.deskripsiTugas
         deadlineTugas = binding.deadlineTugas

@@ -1,6 +1,7 @@
 package id.group4.rekulapplic
 
 import android.app.ProgressDialog
+import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +11,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -58,7 +60,6 @@ class Login : AppCompatActivity() {
 
 
 
-
 //        setContentView(R.layout.activity_login)
 //        var email = findViewById(R.id.email) as EditText
 //        var password = findViewById(R.id.password) as EditText
@@ -86,6 +87,7 @@ class Login : AppCompatActivity() {
 //            startActivity(Intent(this,Registrasi::class.java))
 //        }
     }
+
 
     private var email =""
     private var password =""

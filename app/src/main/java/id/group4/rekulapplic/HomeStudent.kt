@@ -1,11 +1,15 @@
 package id.group4.rekulapplic
 
+import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -52,7 +56,26 @@ class HomeStudent : AppCompatActivity() {
             startActivity(Intent(this, JadwalStudent::class.java))
         }
 
+        getuserName()
         loadUserInfo()
+
+
+
+    }
+
+
+    private fun getuserName() {
+        val user = FirebaseDatabase.getInstance().getReference("Users").child(fAuth.uid!!)
+            .addValueEventListener(object: ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val userName = "${snapshot.child("username").value}"
+                    binding.tvNamaUser.text =userName
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                }
+
+            })
     }
 
     private fun loadUserInfo() {

@@ -1,18 +1,28 @@
 package id.group4.rekulapplic
 
 import android.app.DatePickerDialog
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.ContentValues.TAG
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import com.bumptech.glide.Glide
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.installations.FirebaseInstallations
+import com.google.firebase.ktx.Firebase
 import id.group4.rekulapplic.databinding.ActivityAddJadwalBinding
 import id.group4.rekulapplic.databinding.ActivityAddTugasBinding
 import java.lang.Exception
@@ -30,6 +40,17 @@ class AddJadwal : AppCompatActivity(), View.OnClickListener {
     private lateinit var waktuJadwal : EditText
     private lateinit var pickupDateBtn : Button
     private lateinit var tambahBtn : Button
+
+//    Notification requires component
+    //Defined the required values
+    companion object {
+        const val CHANNEL_ID = "ReKul"
+        private const val CHANNEL_NAME= "ReKul"
+        private const val CHANNEL_DESC = "Notification ReKul"
+    }
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddJadwalBinding.inflate(layoutInflater)
@@ -47,6 +68,7 @@ class AddJadwal : AppCompatActivity(), View.OnClickListener {
         }
 
         fAuth = FirebaseAuth.getInstance()
+
 
 
 //        var mataKuliah: EditText = findViewById(R.id.mataKuliah_Tugas)
@@ -84,11 +106,16 @@ class AddJadwal : AppCompatActivity(), View.OnClickListener {
             datePicker.show()
         }
 
+
+
+
+
         tambahBtn.setOnClickListener(this)
 
         loadUserInfo()
 
     }
+
 
     private fun loadUserInfo() {
         //db reference to load user info
@@ -172,7 +199,34 @@ class AddJadwal : AppCompatActivity(), View.OnClickListener {
 
         ref.child(jadwalId!!).setValue(jadwal)
             .addOnSuccessListener {
+
                 Toast.makeText(this, "Data berhasil ditambahkan", Toast.LENGTH_SHORT).show()
+
+                notification()
+            //                displayNotification()
             }
     }
+
+    private fun notification() {
+
+        //notification broadcast
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT)
+            channel.description = CHANNEL_DESC
+            val manager = getSystemService(NotificationManager::class.java)
+            manager.createNotificationChannel(channel)
+        }
+
+        val builder : NotificationCompat.Builder = NotificationCompat.Builder(this, CHANNEL_ID)
+            .setContentText("ReKul")
+            .setSmallIcon(R.drawable.logo)
+            .setAutoCancel(true)
+            .setContentText("Jadwal Berhasil Diupdate")
+
+        val managerCompat : NotificationManagerCompat = NotificationManagerCompat.from(this)
+        managerCompat.notify(999,builder.build())
+    //notification broadcast
+    }
+
+
 }

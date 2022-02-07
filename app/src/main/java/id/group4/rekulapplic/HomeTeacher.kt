@@ -41,7 +41,22 @@ class HomeTeacher : AppCompatActivity() {
             startActivity(Intent(applicationContext,Profil::class.java))
         }
 
+        getuserName()
         loadUserInfo()
+    }
+
+    private fun getuserName() {
+        val user = FirebaseDatabase.getInstance().getReference("Users").child(fAuth.uid!!)
+            .addValueEventListener(object: ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val userName = "${snapshot.child("username").value}"
+                    binding.tvNamaUser.text =userName
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                }
+
+            })
     }
 
     private fun loadUserInfo() {
