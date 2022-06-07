@@ -24,10 +24,7 @@ import androidx.core.content.ContextCompat
 
 class AdapterPesan(
 //                    private val context: Context,
-                   private val pesanList : ArrayList<DataPesan>,
-                   private val listener : OnAdapterListener
-                   )
-    : RecyclerView.Adapter<AdapterPesan.MyViewHolder> (){
+                   private val pesanList : ArrayList<DataPesan>, private val listener : OnAdapterListener) : RecyclerView.Adapter<AdapterPesan.MyViewHolder> (){
 
     private lateinit var waUrl : String
 

@@ -7,6 +7,7 @@ import android.content.ContentValues.TAG
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -206,6 +207,9 @@ class AddJadwal : AppCompatActivity(), View.OnClickListener {
             //                displayNotification()
             }
     }
+
+
+
 
     private fun notification() {
 
